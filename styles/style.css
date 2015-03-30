@@ -1,0 +1,29 @@
+/*================================
+=             Reset   			 =
+================================*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+    margin:0;
+    padding:0;
+}
+
+
+/*================================
+=             Header   			 =
+================================*/
+.header {
+	height: 80px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #aaaaaa;
+	background-color: #e4e4e4;
+}
+
+.header h1 {
+	text-align: center;
+	font-family: Verdana;
+	height: 80px;
+	line-height: 80px;
+	color: #a3a3a3;
+	font-size: 54px;
+	text-shadow: -1px 0 #676767, 0 1px #676767, 1px 0 #676767, 0 -1px #676767;
+}

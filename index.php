@@ -8,42 +8,29 @@
 		<div class="header">
 			<h1>Köp korv nu!</h1>
 		</div>
-		<div class="sign-in">
-			<div id="as-buyer">
-				<table>
-					<tr>
-						<td>
-							<h3>Logga in som korvköpare</h3>
-						</td>
-					</tr>
-					<tr>
-						<input type="text" name="namn" value="<?php echo $name;?>">
-					</tr>
-					<tr>
-						
-					</tr>
-					<tr>
-						
-					</tr>
-				</table>
+		<div class="container">
+			<div id="create_contract">
+				<h2>Skapa korvtrakt</h2>
+				<form>
+					<p>Namn:</p>
+					<input type="text" name="Namn">
+					<br>
+					<p>Mail:</p>
+					<input type="text" name="Mail">
+					<br>
+					<p>Adress:</p>
+					<input type="text" name="Address">
+					<br>
+					<p>Bankkontonummer:</p>
+					<input type="text" name="Bank account number">
+					<br>
+					<p>Clearingnummer:</p>
+					<input type="text" name="Bank rounting number">
+				</form>
 			</div>
-			<div id="as-seller">
-				<table>
-					<tr>
-						<td>
-							<h3>Logga in som korvsäjare</h3>
-						</td>
-					</tr>
-					<tr>
-						
-					</tr>
-					<tr>
-						
-					</tr>
-					<tr>
-						
-					</tr>
-				</table>
+			<div id="find_contract">
+				<h2>Hitta korvtrakt</h2>
+				<a href="">Klicka här!</a>
 			</div>
 		</div>
 	</body>

@@ -26,10 +26,20 @@
 					<br>
 					<p>Clearingnummer:</p>
 					<input type="text" name="Bank rounting number">
+					<br><br>
+					<div class="continue_button">
+						<input type="submit" value="Fortsätt">
+					</div>
 				</form>
 			</div>
 			<div id="find_contract">
 				<h2>Hitta korvtrakt</h2>
+				<p>
+					Här kan du hitta ett korvtrakt som passar dig!
+					Det finns en stor variation bland olika korvtyper
+					från olika korvtillverkare.
+				</p>
+				<br>
 				<a href="">Klicka här!</a>
 			</div>
 		</div>

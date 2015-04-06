@@ -32,9 +32,12 @@
 					if((mysqli_num_rows($result)) > 0) {
 						while($row = mysqli_fetch_assoc($result)) {
 							echo "ID: " . $row["contractID"] . " Korv Frakt: " . $row["delivPrice"] . " SEK" . " Korvtrakt upprättat vid: " . $row["createTime"]. "<br>"; 
+							echo "<div class='pay_button'>";
+							echo 	"<input type='submit' value='Betala Korvtrakt'>";
+							echo "</div>";
 						}
 					} else {
-						echo "Inget korvtrakt hittades";
+						echo "Inget korvtrakt hittades!";
 					} 
 					mysqli_close($conn);
 				?>

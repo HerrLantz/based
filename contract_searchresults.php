@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div class="header">
-			<h1><?php echo $_POST["korvtraktID"] ?></h1>
+			<h1>Ditt Korvtrakt</h1>
 		</div>
 		<div class ="container">
 			<div id ="search_result">
@@ -16,23 +16,27 @@
 					$password = "";
 					$dbname = "labb2";
 					// Create connection
-					$conn = new mysqli($servername, $username, $password, $dbname);
+					$conn = mysqli_connect($servername, $username, $password, $dbname);
 					// Check connection
-					if ($conn->connect_error) {
-    					die("Connection failed: " . $conn->connect_error);
+					if (!$conn) {
+    					die("Connection failed: " . mysqli_connect_error());
 					}
 					//Fetch contract
-					$sql = 'SELECT * FROM contract WHERE contractID = "" . $_POST["korvtraktID"]';
-					$result = $conn->query($sql);
+					$sql = "SELECT * FROM contract WHERE contractID = " . $_POST["korvtraktID"] . "";
+					$result = mysqli_query($conn, $sql);
+					if (!$result) {
+    					printf("Error: %s\n", mysqli_error($conn));
+    					exit();
+					}
 					//Display search result or error if no contract found
 					if((mysqli_num_rows($result)) > 0) {
-						while($row = $result->fetch_assoc()) {
-							echo "id: " . $row["contractID"] . " " . $row["delivPrice"] . " " . $row["createTime"]. "<br>"; 
+						while($row = mysqli_fetch_assoc($result)) {
+							echo "ID: " . $row["contractID"] . " Korv Frakt: " . $row["delivPrice"] . " SEK" . " Korvtrakt upprättat vid: " . $row["createTime"]. "<br>"; 
 						}
 					} else {
 						echo "Inget korvtrakt hittades";
-					}
-					$conn->close();
+					} 
+					mysqli_close($conn);
 				?>
 			</div>	
 		</div>	

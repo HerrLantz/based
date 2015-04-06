@@ -137,3 +137,24 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+#personal_info table th {
+	background-color: #45f3a4;
+}
+
+#personal_info table tr {
+	background-color: #f0fff4;
+}
+
+#personal_info table tr:hover {
+	background-color: #45f3e4;
+}
+
+#personal_info table th, #personal_info table td {
+	padding: 5px 20px;
+}
+
+#personal_info table, #personal_info th, #personal_info td {
+	border: 1px solid #999999;
+	border-collapse: collapse;
+}

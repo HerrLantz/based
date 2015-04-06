@@ -36,10 +36,6 @@
 					</td>
 				</tr>
 			</table>
-			
-			
-			
-			
 		</div>
 		<form>
 			

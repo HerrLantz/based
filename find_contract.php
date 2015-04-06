@@ -12,12 +12,13 @@
 			<div id ="search_contract">
 				<h2>Sök korvtrakt</h2>
 				<form action="" method="post">
-					<p>E-mail</p>
-					<input type="text" name="email">
+					<p>Korvtrakt ID</p>
+					<input type="text" name="korvtraktID">
 					<br>
 					<div class="continue_button">
 						<input type="submit" value="Sök">
 					</div>
+					
 				</form>
 			</div>
 		</div>

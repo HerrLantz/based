@@ -37,7 +37,7 @@
 				<p>
 					Här kan du hitta ett korvtrakt som passar dig!
 					Det finns en stor variation bland olika korvtyper
-					från olika korvtillverkare.
+					från olika korvtillverkare hej.
 				</p>
 				<br>
 				<a href="">Klicka här!</a>

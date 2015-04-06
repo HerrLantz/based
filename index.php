@@ -11,7 +11,7 @@
 		<div class="container">
 			<div id="create_contract">
 				<h2>Skapa korvtrakt</h2>
-				<form>
+				<form action="contract_setup.php" method="post">
 					<p>Namn:</p>
 					<input type="text" name="Namn">
 					<br>
@@ -40,7 +40,7 @@
 					från olika korvtillverkare.
 				</p>
 				<br>
-				<a href="">Klicka här!</a>
+				<a href="find_contract.php">Klicka här!</a>
 			</div>
 		</div>
 	</body>

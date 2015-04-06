@@ -22,10 +22,10 @@
 					<input type="text" name="Address">
 					<br>
 					<p>Bankkontonummer:</p>
-					<input type="text" name="Bank account number">
+					<input type="text" name="BAN">
 					<br>
 					<p>Clearingnummer:</p>
-					<input type="text" name="Bank rounting number">
+					<input type="text" name="BRN">
 					<br><br>
 					<div class="continue_button">
 						<input type="submit" value="Fortsätt">

@@ -10,11 +10,36 @@
 	</div>
 	<div class="container">
 		<div id="personal_info">
-			<?php echo $_POST["Namn"]; ?>
-			<?php echo $_POST["Mail"]; ?>
-			<?php echo $_POST["Address"]; ?>
-			<?php echo $_POST["BAN"]; ?>
-			<?php echo $_POST["BRN"]; ?>
+			<table>
+				<tr>
+					<th>Namn</th>
+					<th>Mail</th>
+					<th>Adress</th>
+					<th>Bankkontonummer</th>
+					<th>Clearingnummer</th>
+				</tr>
+				<tr>
+					<td>
+						<?php echo $_POST["Namn"]; ?>
+					</td>
+					<td>
+						<?php echo $_POST["Mail"]; ?>
+					</td>
+					<td>
+						<?php echo $_POST["Address"]; ?>
+					</td>
+					<td>
+						<?php echo $_POST["BAN"]; ?>
+					</td>
+					<td>
+						<?php echo $_POST["BRN"]; ?>
+					</td>
+				</tr>
+			</table>
+			
+			
+			
+			
 		</div>
 		<form>
 			

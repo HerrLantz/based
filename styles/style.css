@@ -127,3 +127,13 @@ body {
 #find_contract a:active {
 	background-color: #67c393;
 }
+
+/*================================
+=         personal_info			 =
+================================*/
+
+#personal_info {
+	/*display: block;*/
+	margin-left: auto;
+	margin-right: auto;
+}

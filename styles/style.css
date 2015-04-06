@@ -91,6 +91,10 @@ body {
 	background-color: #67c393;
 }
 
+#create_contract .continue_button input:focus {
+	background-color: #67c393;
+}
+
 /*================================
 =         Find contract			 =
 ================================*/
@@ -98,7 +102,7 @@ body {
 #find_contract {
 	display: inline;
 	float: left;
-	margin-left: 15%;
+	margin-left: 16%;
 }
 
 #find_contract p {

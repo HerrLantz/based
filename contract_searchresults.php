@@ -37,8 +37,16 @@
 							echo "Korv Pris: " . $row["packagePrice"] . " SEK<br>";
 							echo "Korv Frakt: " . $row["delivPrice"] . " SEK<br>";
 							echo "Korvtrakt upprättat: " . $row["createTime"]. "<br>"; 
-							echo "<div class='pay_button'>
-							 		<a href='paycontract.php'>Betala Korvtrakt</a>
+
+							//Used to send the buyers inputted korvtraktID to the next page so
+							//we can use it to register the contract as payed in the database.
+							echo "<div class='pay_form'>
+									<form action ='paycontract.php' method='post'>
+										<input type='hidden' name='korvtraktID' value=" . $_POST["korvtraktID"] . ">
+										<br>
+										<div class='pay_button'>
+											<input type='submit' value='Betala Korvtrakt'
+							 			</div>
 								</div>";
 						}
 					} else {
@@ -46,7 +54,7 @@
 					} 
 					mysqli_close($conn);
 				?>
-			</div>	
+			</div>
 		</div>	
 	</body>
 </html>

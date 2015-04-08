@@ -6,13 +6,12 @@
 	</head>
 	<body>
 		<div class="header">
-			<h1><?php echo "bitch" ?></h1>
+			<h1><?php echo $_POST["korvtraktID"] ?></h1>
 		</div>
 		<div class="continer">
 			<div>
 				<?php
 					//INTE KLART. SQL funkar inte för $_POST vill inte ge mig korvtraktID.
-					// SMH NU CRASHA MITT INTERNET SÅ JAG KAN INTE HITTA LÖSNING PÅ PROBLEMET FFS.
 					$servername = "localhost";
 					$username = "root";
 					$password = "";
@@ -25,7 +24,7 @@
 					}
 					//Register the contract as payed in database
 					$sql = "INSERT INTO pays
-							(contractID) VALUES (" . $_POST["korvtraktID"] . ")";
+							(time, contractID) VALUES (NOW(), " . $_POST["korvtraktID"] . ")";
 					$result = mysqli_query($conn, $sql);
 					if (!$result) {
 						//printf("Vi lyckades inte behandla din betalning. Säkert du som gjort fel...");

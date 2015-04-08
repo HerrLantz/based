@@ -13,7 +13,7 @@
 				<h2>Sök korvtrakt</h2>
 				<form action="contract_searchresults.php" method="post">
 					<p>Korvtrakt ID</p>
-					<input type="text" name="korvtraktID">
+					<input type="number" name="korvtraktID" required>
 					<br>
 					<div class="continue_button">
 						<input type="submit" value="Sök">

@@ -25,19 +25,24 @@
 					$sql = "SELECT * FROM contract WHERE contractID = " . $_POST["korvtraktID"] . "";
 					$result = mysqli_query($conn, $sql);
 					if (!$result) {
-    					printf("Error: %s\n", mysqli_error($conn));
+						printf("Inget korvtrakt hittades! Se till att du fyllt i rätt korvtraktnummer.");
+						//SQL Error message. Use for debuging only!
+    					//printf("Error: %s\n", mysqli_error($conn));
     					exit();
 					}
 					//Display search result or error if no contract found
 					if((mysqli_num_rows($result)) > 0) {
 						while($row = mysqli_fetch_assoc($result)) {
-							echo "ID: " . $row["contractID"] . " Korv Frakt: " . $row["delivPrice"] . " SEK" . " Korvtrakt upprättat vid: " . $row["createTime"]. "<br>"; 
+							echo "ID: " . $row["contractID"] . "<br>";
+							echo "Korv Pris: " . $row["packagePrice"] . " SEK<br>";
+							echo "Korv Frakt: " . $row["delivPrice"] . " SEK<br>";
+							echo "Korvtrakt upprättat: " . $row["createTime"]. "<br>"; 
 							echo "<div class='pay_button'>
-							 		<a href=''>Betala Korvtrakt</a>
+							 		<a href='paycontract.php'>Betala Korvtrakt</a>
 								</div>";
 						}
 					} else {
-						echo "Inget korvtrakt hittades!";
+						echo "Inget korvtrakt hittades! Se till att du fyllt i rätt korvtraktnummer.";
 					} 
 					mysqli_close($conn);
 				?>

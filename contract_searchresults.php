@@ -50,7 +50,7 @@
 								</div>";
 						}
 					} else {
-						echo "Inget korvtrakt hittades! Se till att du fyllt i rätt korvtraktnummer.";
+						echo "Inget korvtrakt hittades! Se till att du fyllt i rätt e-mailadress och korvtraktnummer.";
 					} 
 					mysqli_close($conn);
 				?>

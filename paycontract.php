@@ -12,7 +12,7 @@
 			<div id ="pay_contract">
 				<?php
 				echo "<form action='contract_payed.php' method='post'>
-						<p>Kortnummer</p>
+						<p>Kortnummer:</p>
 						<input type='number' name='kortnummer' required>
 						<input type='hidden' name='korvtraktID' value=" . $_POST["korvtraktID"] . ">
 						<div class='continue_button'>

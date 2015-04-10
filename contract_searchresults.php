@@ -22,12 +22,13 @@
     					die("Connection failed: " . mysqli_connect_error());
 					}
 					//Fetch contract
-					$sql = "SELECT * FROM contract WHERE contractID = " . $_POST["korvtraktID"] . "";
+					$sql = "SELECT * FROM contract 
+							WHERE contractID = '" . $_POST["korvtraktID"] . "' AND buyerMail = '" . $_POST["buyermail"] . "'";
 					$result = mysqli_query($conn, $sql);
 					if (!$result) {
-						printf("Inget korvtrakt hittades! Se till att du fyllt i rätt korvtraktnummer.");
+						//printf("Inget korvtrakt hittades! Se till att du fyllt i rätt korvtraktnummer.");
 						//SQL Error message. Use for debuging only!
-    					//printf("Error: %s\n", mysqli_error($conn));
+    					printf("Error: %s\n", mysqli_error($conn));
     					exit();
 					}
 					//Display search result or error if no contract found
@@ -43,7 +44,6 @@
 							echo "<div class='pay_form'>
 									<form action ='paycontract.php' method='post'>
 										<input type='hidden' name='korvtraktID' value=" . $_POST["korvtraktID"] . ">
-										<br>
 										<div class='pay_button'>
 											<input type='submit' value='Betala Korvtrakt'
 							 			</div>

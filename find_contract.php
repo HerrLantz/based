@@ -12,7 +12,10 @@
 			<div id ="search_contract">
 				<h2>Sök korvtrakt</h2>
 				<form action="contract_searchresults.php" method="post">
-					<p>Korvtrakt ID</p>
+					<p>E-mailadress:</p>
+					<input type="email" name="buyermail" required>
+					<br>
+					<p>Korvtrakt ID:</p>
 					<input type="number" name="korvtraktID" required>
 					<br>
 					<div class="continue_button">

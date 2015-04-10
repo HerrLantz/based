@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<link href="styles/style.css" rel="stylesheet">
@@ -32,7 +32,7 @@
     					printf("Error: %s\n", mysqli_error($conn));
     					exit();
 					}
-					//Check if row was added to pays
+					//Check if row was added to pays (Not working)
 					if((mysql_fetch_array($result))) {
 						printf("Betalning gick igenom. Fan va nice!");
 					} else {

@@ -39,22 +39,33 @@
 		</div>
 		<div id="enter_contract">
 			<form action="submit_contract" method="post">
+				<h3>Uppgifter om köparen</h3>
 				<p>Köparens Mail:</p>
 				<input type="text" name="buyer_mail" required>
 				<p>Köparens Address:</p>
 				<input type="text" name="buyer_address" required>
 				<h3>Paketinformation</h3>
 				<p>Pris:</p>
-				<input type="text" name="package_price" required>
+				<input type="text" pattern="[0-9]+" name="package_price" title="Endast siffor tillåtna" required>
 				<p>Höjd (meter):</p>
-				<input type="text" name="package_height" required>
+				<input type="text" pattern="[0-9]+" name="package_height" title="Endast siffor tillåtna" required>
 				<p>Längd (meter):</p>
-				<input type="text" name="package_length" required>
+				<input type="text" pattern="[0-9]+" name="package_length" title="Endast siffor tillåtna" required>
 				<p>Bredd: (meter):</p>
-				<input type="text" name="package_width" required>
+				<input type="text" pattern="[0-9]+" name="package_width" title="Endast siffor tillåtna" required>
 				<p>Beskrivning av produkt:</p>
 				<div id="prod_description">
-					<input type="text" name="package_desc" required>
+					<input type="text" pattern=".{20,256}" name="package_desc" title="Beskrivningen måste vara mellan 20-256 tecken långt!" required>
+				</div>
+				<br>
+				<?php
+					echo	"<input type='hidden' name='Namn' value=" . $_POST["Namn"] . ">
+							<input type='hidden' name='Mail' value=" . $_POST["Mail"] . ">
+							<input type='hidden' name='BAN' value=" . $_POST["BAN"] . ">
+							<input type='hidden' name='BRN' value=" . $_POST["BRN"] . ">";
+				?>
+				<div class="continue_button">
+					<input type="submit" value="Skapa Korvtrakt!">
 				</div>
 			</form>
 		</div>

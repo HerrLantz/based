@@ -137,8 +137,21 @@ input:focus {
 	padding: 10px 0px 0px 0px;
 }
 
+/*================================
+=         contract setup		 =
+================================*/
 
+#enter_contract p {
+	padding: 10px 0px 0px 0px;
+}
 
+#enter_contract h3:first-child {
+	padding: 50px 0px 0px 0px;
+}
+
+#enter_contract h3:nth-child(6) {
+	padding: 40px 0px 0px 0px;
+}
 
 /*================================
 =         personal_info			 =

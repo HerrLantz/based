@@ -22,28 +22,21 @@
     					die("Connection failed: " . mysqli_connect_error());
 					}
 					//Check if the contract has already been payed.
-					$sql = "SELECT * FROM pays 
-							WHERE contractID = " . $_POST["korvtraktID"] . "";
-					$result = mysqli_query($conn, $sql);
-					if(!is_null($result)) {
+					$checksql = "SELECT * FROM pays 
+							WHERE contractID = " . $_POST["korvtraktID"] . "";		
+					$checkresult = mysqli_query($conn, $checksql);
+					if(mysqli_num_rows($checkresult) == 0) {
 						//Register the contract as payed in database
-						$sql = "INSERT INTO pays
+						$paysql = "INSERT INTO pays
 								(time, contractID) VALUES (NOW(), " . $_POST["korvtraktID"] . ")";
-						$result = mysqli_real_query($conn, $sql);
-						//$payedResult = mysqli_use_result($conn);
-						if((mysqli_num_rows($result)) > 0) {
-							//printf("Vi lyckades inte behandla din betalning. Säkert du som gjort fel...");
-							//SQL Error message. Use for debuging only!
-    						printf("Error: %s\n", mysqli_error($conn));
-    						exit();
-						}
-						//Check if row was added to pays (Not working)
-						if($result) {
+						$payresult = mysqli_query($conn, $paysql);
+						if($payresult) {
 							echo "Betalning gick igenom. Fan va nice!";
 						} else {
 							echo "Vi lyckades inte behandla din betalning. Säkert du som gjort fel...";
 						}
 						mysqli_close($conn);
+					//if the contract has already been payed an error is given and the connection is closed.
 					} else {
 						echo "Detta korvtrakt är redan betalt";
 						mysqli_close($conn);

@@ -37,9 +37,21 @@
 				</tr>
 			</table>
 		</div>
-		<form>
-			
-		</form>
+		<div id="enter_contract">
+			<form action="submit_contract" method="post">
+				<p>Köparens Mail:</p>
+					
+				<p>Köparens Address:</p>
+				<h3>Paketinformation</h3>
+				<p>Pris:</p>
+				<p>Höjd (meter):</p>
+				<p>Längd (meter):</p>
+				<p>Bredd: (meter):</p>
+				<p>Beskrivning av produkt:</p>
+				<div id="prod_description">
+				</div>
+			</form>
+		</div>
 	</div>
 </body>
 </html>

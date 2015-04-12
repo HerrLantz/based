@@ -60,7 +60,7 @@ body {
 	padding: 10px 0px 0px 0px;
 }
 
-#create_contract input {
+input {
 	width: 180px;
 	height: 25px;
 	padding: 0px 0px 0px 4px;
@@ -71,28 +71,28 @@ body {
 	border-radius: 2px;
 }
 
-#create_contract input:focus {
+input:focus {
 	border: 2px solid #45a5f3;
 	background-color: #fffff3;
 	border-radius: 2px;
 }
 
-#create_contract .continue_button input {
+.continue_button input {
 	border-style: none;
 	border-width: 2px;
 	background-color: #67d393;
 	color: #fff;
 }
 
-#create_contract .continue_button input:hover {
+.continue_button input:hover {
 	background-color: #67e393;
 }
 
-#create_contract .continue_button input:active {
+.continue_button input:active {
 	background-color: #67c393;
 }
 
-#create_contract .continue_button input:focus {
+.continue_button input:focus {
 	background-color: #67c393;
 }
 
@@ -128,6 +128,17 @@ body {
 #find_contract a:active {
 	background-color: #67c393;
 }
+
+/*================================
+=         search contract		 =
+================================*/
+
+#search_contract p {
+	padding: 10px 0px 0px 0px;
+}
+
+
+
 
 /*================================
 =         personal_info			 =

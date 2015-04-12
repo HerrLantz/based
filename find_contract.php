@@ -15,9 +15,9 @@
 					<p>E-mailadress:</p>
 					<input type="email" name="buyermail" required>
 					<br>
-					<p>Korvtrakt ID:</p>
-					<input type="number" name="korvtraktID" required>
-					<br>
+					<p>Korvtrakt ID (endast siffor):</p>
+					<input type="text" pattern="[0-9]+" name="korvtraktID" required>
+					<br><br>
 					<div class="continue_button">
 						<input type="submit" value="Sök">
 					</div>

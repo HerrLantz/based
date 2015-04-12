@@ -53,6 +53,8 @@
 				<input type="text" pattern="[0-9]+" name="package_length" title="Endast siffor tillåtna" required>
 				<p>Bredd: (meter):</p>
 				<input type="text" pattern="[0-9]+" name="package_width" title="Endast siffor tillåtna" required>
+				<p>Vikt (kg):</p>
+				<input type="text" pattern="[0-9]+" name="package_weight" title="Endast siffor tillåtna" required>
 				<p>Beskrivning av produkt:</p>
 				<div id="prod_description">
 					<input type="text" pattern=".{20,256}" name="package_desc" title="Beskrivningen måste vara mellan 20-256 tecken långt!" required>

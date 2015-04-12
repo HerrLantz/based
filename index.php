@@ -13,19 +13,19 @@
 				<h2>Skapa korvtrakt</h2>
 				<form action="contract_setup.php" method="post">
 					<p>Namn:</p>
-					<input type="text" name="Namn">
+					<input type="text" name="Namn" required>
 					<br>
 					<p>Mail:</p>
-					<input type="text" name="Mail">
+					<input type="text" name="Mail" required>
 					<br>
 					<p>Adress:</p>
-					<input type="text" name="Address">
+					<input type="text" name="Address" required>
 					<br>
 					<p>Bankkontonummer:</p>
-					<input type="text" name="BAN">
+					<input type="text" pattern="[0-9]+" name="BAN" title="Endast siffor tillåtna" required>
 					<br>
 					<p>Clearingnummer:</p>
-					<input type="text" name="BRN">
+					<input type="text" pattern="[0-9]+" name="BRN" title="Endast siffor tillåtna" required>
 					<br><br>
 					<div class="continue_button">
 						<input type="submit" value="Fortsätt">

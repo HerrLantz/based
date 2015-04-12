@@ -38,7 +38,7 @@
 			</table>
 		</div>
 		<div id="enter_contract">
-			<form action="submit_contract" method="post">
+			<form action="submit_contract.php" method="post">
 				<h3>Uppgifter om köparen</h3>
 				<p>Köparens Mail:</p>
 				<input type="text" name="buyer_mail" required>
@@ -61,6 +61,7 @@
 				<?php
 					echo	"<input type='hidden' name='Namn' value=" . $_POST["Namn"] . ">
 							<input type='hidden' name='Mail' value=" . $_POST["Mail"] . ">
+							<input type='hidden' name='Address' value=" . $_POST["Address"] . ">
 							<input type='hidden' name='BAN' value=" . $_POST["BAN"] . ">
 							<input type='hidden' name='BRN' value=" . $_POST["BRN"] . ">";
 				?>

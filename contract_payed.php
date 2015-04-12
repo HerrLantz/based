@@ -32,6 +32,8 @@
 						$payresult = mysqli_query($conn, $paysql);
 						if($payresult) {
 							echo "Betalning gick igenom. Fan va nice!";
+							echo "<br>";
+							echo "<a href='index.php'>Fortsätt</a>";
 						} else {
 							echo "Vi lyckades inte behandla din betalning. Säkert du som gjort fel...";
 						}

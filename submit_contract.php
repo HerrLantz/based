@@ -94,13 +94,13 @@
 			$domain = "sandbox88d1efcae48e4c77ad2cbbdca788bb3d.mailgun.org";
 
 			# Make the call to the client.
-			$result = $mgClient->sendMessage("$domain",
+			$mail_res = $mgClient->sendMessage("$domain",
 			                  array('from'    => 'Mailgun Sandbox <postmaster@sandbox88d1efcae48e4c77ad2cbbdca788bb3d.mailgun.org>',
 			                        'to'      => $contr_buyerMail,
 			                        'subject' => 'TEST!!!',
 			                        'text'    => 'TEST DATABAS LABB2'));
 
-			if (!$result) {
+			if (!$mail_res) {
 				printf("Error: %s\n", mysqli($conn));
 				exit();
 			}

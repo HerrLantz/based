@@ -81,6 +81,29 @@
 				$everything_is_ok = false;
 				exit();
 			}
+
+
+			// MAIL TO BUYER
+
+			# Include the Autoloader (see "Libraries" for install instructions)
+			require 'mailgun-php/vendor/autoload.php';
+			use Mailgun\Mailgun;
+
+			# Instantiate the client.
+			$mgClient = new Mailgun('key-1efda47fe19993eafe17e78b05d95f2e');
+			$domain = "sandbox88d1efcae48e4c77ad2cbbdca788bb3d.mailgun.org";
+
+			# Make the call to the client.
+			$result = $mgClient->sendMessage("$domain",
+			                  array('from'    => 'Mailgun Sandbox <postmaster@sandbox88d1efcae48e4c77ad2cbbdca788bb3d.mailgun.org>',
+			                        'to'      => $contr_buyerMail,
+			                        'subject' => 'TEST!!!',
+			                        'text'    => 'TEST DATABAS LABB2'));
+
+			if (!$result) {
+				printf("Error: %s\n", mysqli($conn));
+				exit();
+			}
 		?>
 	</div>
 </body>

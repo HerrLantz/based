@@ -6,6 +6,8 @@
 <body>
 	<div class="container">
 		<?php
+			date_default_timezone_set('Europe/Stockholm');
+
 			$servername = "localhost";
 			$username = "root";
 			$password = "";
@@ -70,8 +72,8 @@
 
 			$opens_mail = $contr_sellerMail;
 
-			$opens_result = mysqli_query($conn, "INSERT INTO opens (sellermail)
-									           VALUES ('$opens_mail')");
+			$opens_result = mysqli_query($conn, "INSERT INTO opens (sellermail, time)
+									           VALUES ('$opens_mail', NOW())");
 
 			if (!$opens_result) {
 				//SQL Error message. Use for debuging only!

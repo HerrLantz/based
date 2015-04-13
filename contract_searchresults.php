@@ -36,8 +36,7 @@
 						while($row = mysqli_fetch_assoc($result)) {
 							echo "ID: " . $row["contractID"] . "<br>";
 							echo "Korv Pris: " . $row["packagePrice"] . " SEK<br>";
-							echo "Korv Frakt: " . $row["delivPrice"] . " SEK<br>";
-							echo "Korvtrakt upprättat: " . $row["createTime"]. "<br>"; 
+							echo "Korv Frakt: " . $row["delivPrice"] . " SEK<br>"; 
 
 							//Used to send the buyers inputted korvtraktID to the next page so
 							//we can use it to register the contract as payed in the database.

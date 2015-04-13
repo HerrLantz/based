@@ -46,6 +46,7 @@
 						echo "<tr>
 								<td>" . $row["contractID"] . " </td>
 								<td>" . $row["delivPrice"] . " </td>
+								<td><</td>
 							</tr>";	
 					}
 					echo "</table>";

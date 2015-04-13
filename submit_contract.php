@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Korvtrakt Skapat!</title>
+	<title></title>
 </head>
 <body>
 	<div class="container">
@@ -10,6 +10,8 @@
 			$username = "root";
 			$password = "";
 			$dbname = "labb2";
+
+			$everything_is_ok = true;
 			// Create connection
 			$conn = mysqli_connect($servername, $username, $password, $dbname);
 			// Check connection
@@ -28,6 +30,7 @@
 			if (!$seller_result) {
 				//SQL Error message. Use for debuging only!
 				printf("Error: %s\n", mysqli_error($conn));
+				$everything_is_ok = false;
 				exit();
 			}
 			// Adding package information to the database
@@ -39,19 +42,31 @@
 			$pkg_weight = $_POST["package_weight"];
 			$pkg_desc = $_POST["package_desc"];
 
-			$deliv_price = ($pkg_height*$pkg_length*$pkg_width)*100;
-
-			$pkg_result = mysqli_query($conn, "INSERT INTO package (width, height, price, length, width, weight, description)
-									           VALUES ('$pkg_width', '$pkg_height', '$pkg_price', '$pkg_length', $pkg_weight, $pkg_desc)");
+			$pkg_result = mysqli_query($conn, "INSERT INTO package (width, height, price, length, weight, description)
+									           VALUES ('$pkg_width', '$pkg_height', '$pkg_price', '$pkg_length', '$pkg_weight', '$pkg_desc')");
 
 			if (!$pkg_result) {
 				//SQL Error message. Use for debuging only!
 				printf("Error: %s\n", mysqli_error($conn));
+				$everything_is_ok = false;
 				exit();
 			}
 
+			$contr_sellerMail = $mail;
+			$contr_buyerMail = $_POST["buyer_mail"];
+			$contr_buyerAddress = $_POST["buyer_address"];
+			$deliv_price = ($pkg_height*$pkg_length*$pkg_width)*100;
+
+			$contr_result = mysqli_query($conn, "INSERT INTO contract (sellerMail, buyerMail, delivPrice, packagePrice)
+									           VALUES ('$contr_sellerMail', '$contr_buyerMail', '$deliv_price', '$pkg_price')");
 
 			
+			if (!$contr_result) {
+				//SQL Error message. Use for debuging only!
+				printf("Error: %s\n", mysqli_error($conn));
+				$everything_is_ok = false;
+				exit();
+			}
 		?>
 	</div>
 </body>

@@ -67,6 +67,18 @@
 				$everything_is_ok = false;
 				exit();
 			}
+
+			$opens_mail = $contr_sellerMail;
+
+			$opens_result = mysqli_query($conn, "INSERT INTO opens (sellermail)
+									           VALUES ('$opens_mail')");
+
+			if (!$opens_result) {
+				//SQL Error message. Use for debuging only!
+				printf("Error: %s\n", mysqli_error($conn));
+				$everything_is_ok = false;
+				exit();
+			}
 		?>
 	</div>
 </body>

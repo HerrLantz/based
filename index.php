@@ -16,7 +16,7 @@
 					<input type="text" name="Namn" required>
 					<br>
 					<p>Mail:</p>
-					<input type="text" pattern="[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}" name="Mail" required>
+					<input type="text" name="Mail" title="Exempelmail: korv@korv.se" required>
 					<br>
 					<p>Adress:</p>
 					<input type="text" name="Address" required>

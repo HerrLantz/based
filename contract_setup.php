@@ -41,7 +41,7 @@
 			<form action="submit_contract.php" method="post">
 				<h3>Uppgifter om köparen</h3>
 				<p>Köparens Mail:</p>
-				<input type="text" pattern="[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}" name="buyer_mail" title="Exempelmail: korv@korv.se" required>
+				<input type="text" name="buyer_mail" title="Exempelmail: korv@korv.se" required>
 				<p>Köparens Address:</p>
 				<input type="text" name="buyer_address" required>
 				<h3>Paketinformation</h3>

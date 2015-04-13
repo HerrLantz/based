@@ -37,7 +37,7 @@
 					exit();
 				}
 				if((mysqli_num_rows($result)) > 0) {
-					echo "<table border='1' style='width:100%'>
+					echo "<table style='width:100%'>
 								<tr>
 									<th>ID</th>
 									<th>Du tjänar</th>
@@ -46,7 +46,7 @@
 						echo "<tr>
 								<td>" . $row["contractID"] . " </td>
 								<td>" . $row["delivPrice"] . " </td>
-								<td><</td>
+								<td><a href='index.php'>Ta korvtrakt</a></td>
 							</tr>";	
 					}
 					echo "</table>";

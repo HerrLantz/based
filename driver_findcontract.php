@@ -13,7 +13,7 @@
 			<p>
 			Här ser du korvtrakt som behöver folk som kan transportera varan.
 			Ser du ett korvtrakt du vill transportera för är det bara att klicka på
-			SWWAAAGG
+			länken som tillhör korvtraktet.
 			</p>
 			<?php
 				$servername = "localhost";
@@ -46,7 +46,7 @@
 						echo "<tr>
 								<td>" . $row["contractID"] . " </td>
 								<td>" . $row["delivPrice"] . " </td>
-								<td><a href='index.php'>Ta korvtrakt</a></td>
+								<td><a href='driver_brnfill.php'>Ta korvtrakt</a></td>
 							</tr>";	
 					}
 					echo "</table>";

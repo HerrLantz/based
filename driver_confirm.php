@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div class="header">
-			<h1>Transportera korv</h1>
+			<h1><?php $_POST["korvtraktID"] ?></h1>
 		</div>
 		<div>
 			<?php
@@ -31,27 +31,40 @@
     					mysqli_close($conn);
     					exit();
     			} else {
+    				// Select the users generated driverID.
     				$sql = "SELECT driverID FROM driver
     						WHERE brn = '" . $_POST["BRN"] . "' AND ban = '" . $_POST["BAN"] . "'";
     				$result = mysqli_query($conn, $sql);
     				if(!$result) {
-						//SQL Error message. Use for debuging only!
+						//SQL Error message.
     					printf("Error: %s\n", mysqli_error($conn));
     					exit();
     				} else {
     					if((mysqli_num_rows($result)) > 0) {
     						$row = mysqli_fetch_assoc($result);
+    						// Set the contract as taken in the database.
+    						$sql = "INSERT INTO takes (contractID, driverID, time) VALUES
+    							(" . $_POST["korvtraktID"] . ", " . $row["driverID"] . ", NOW())";
+    						$result = mysqli_query($conn, $sql);
+    						if(!$result) {
+								//SQL Error message.
+    							printf("Error: %s\n", mysqli_error($conn));
+    							exit();
+    						} else {
     						echo "Grattis, du är nu registrerad som förare för detta korvtrakt.<br>
     								Ditt förarnummer är " . $row["driverID"] . "<br>
     								Detta nummer använder du för att logga in på startsida när du ska 
-    								registrera att du hämtat korven från säljaren.";
-
+    								registrera att du hämtat korven från säljaren.<br>";
+    						echo "<a href='index.php'>Fortsätt<a>";
+    						}
     					} else {
-    						echo "Ett fel uppstod. Shit";
+    						echo "Ett fel uppstod. Shit...";
     						mysqli_close($conn);
     						exit();
     					}
     				}
+
+
     			} 
     			mysqli_close($conn);
 			?>

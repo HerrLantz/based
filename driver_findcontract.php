@@ -39,14 +39,18 @@
 				if((mysqli_num_rows($result)) > 0) {
 					echo "<table style='width:100%'>
 								<tr>
-									<th>ID</th>
-									<th>Du tjänar</th>
+									<th align='left'>ID</th>
+									<th align='left'>Du tjänar</th>
 								</tr>";
 					while($row = mysqli_fetch_assoc($result)) {
 						echo "<tr>
 								<td>" . $row["contractID"] . " </td>
-								<td>" . $row["delivPrice"] . " </td>
-								<td><a href='driver_brnfill.php'>Ta korvtrakt</a></td>
+								<td>" . $row["delivPrice"] . " SEK </td>
+								<td>
+									<form action='driver_brnfill.php' method='post'>
+									<input type='hidden' name='korvtraktID' value=" . $row["contractID"] . ">
+									<input type='submit' value='Ta korvtrakt'>
+								</td>
 							</tr>";	
 					}
 					echo "</table>";

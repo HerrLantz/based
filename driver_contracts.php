@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div class="header">
-			<h1>Mina korvtrakt</h1>
+			<h1>Mina leveranser</h1>
 		</div>
 		<div class="package_container">
 			<h2>Korvpaket du transporterar</h2>
@@ -21,20 +21,33 @@
 				if (!$conn) {
     				die("Connection failed: " . mysqli_connect_error());
 				}
-				echo "<table style='width:100%'>
+				$dropsql = "SELECT * FROM dropsoff
+							WHERE driverID =" . $_POST["driverID"] . "";
+				$dropresult = mysqli_query($conn, $dropsql);
+				if(!$dropresult) {
+					printf("Ett fel uppstod. Se till att du fyllt i rätt förarnummer.");
+					exit();
+				}
+				$picksql = "SELECT packageID FROM picksup
+							WHERE driverID =" . $_POST["driverID"] . "
+							AND (packageID) NOT IN 
+							(SELECT packageID FROM dropsoff)";
+				$pickresult = mysqli_query($conn, $picksql);
+				if(!$pickresult) {
+					printf("Ett fel uppstod. Se till att du fyllt i rätt förarnummer.");
+					exit();
+				}
+				if(mysqli_num_rows($pickresult) > 0 || mysqli_num_rows($dropresult) > 0) {
+					echo "<table style='width:100%'>
 								<tr>
 									<th align='left'>Paketnummer</th>
 									<th align='left'>Status</th>
 								</tr>";
-				$sql = "SELECT * FROM dropsoff
-						WHERE driverID =" . $_POST["driverID"] . "";
-				$result = mysqli_query($conn, $sql);
-				if(!$result) {
-					printf("Ett fel uppstod. Se till att du fyllt i rätt förarnummer.");
-					exit();
+				} else {
+					echo "Inga korvpaket håller på transporteras.";
 				}
-				if(mysqli_num_rows($result) > 0) {
-					while($row = mysqli_fetch_assoc($result)) {
+				if(mysqli_num_rows($pickresult) > 0) {
+					while($row = mysqli_fetch_assoc($pickresult)) {
 						echo "<tr>
 								<td>" . $row["packageID"] ."</td>
 								<td>Levererat</td>
@@ -46,17 +59,8 @@
 							</tr>";
 					}
 				}
-				$sql = "SELECT packageID FROM picksup
-						WHERE driverID =" . $_POST["driverID"] . "
-						AND (packageID) NOT IN 
-						(SELECT packageID FROM dropsoff)";
-				$result = mysqli_query($conn, $sql);
-				if(!$result) {
-					printf("Ett fel uppstod. Se till att du fyllt i rätt förarnummer.");
-					exit();
-				}
-				if(mysqli_num_rows($result) > 0) {
-					while($row = mysqli_fetch_assoc($result)) {
+				if(mysqli_num_rows($dropresult) > 0) {
+					while($row = mysqli_fetch_assoc($dropresult)) {
 						echo "<tr>
 								<td>" . $row["packageID"] ."</td>
 								<td>Hämtat</td>
@@ -75,11 +79,6 @@
 		<div class = "contracts_container">
 			<h2>Korvtrakt du ska transportera</h2>
 			<?php
-				echo "<table style='width:100%'>
-								<tr>
-									<th align='left'>Korvtraktnummer</th>
-									<th align='left'>Status</th>
-								</tr>";
 				$sql = "SELECT * FROM takes 
 						WHERE driverID =" . $_POST["driverID"] . "";
 				$result = mysqli_query($conn, $sql);
@@ -88,6 +87,11 @@
 					exit();
 				}
 				if(mysqli_num_rows($result) > 0) {
+					echo "<table style='width:100%'>
+								<tr>
+									<th align='left'>Korvtraktnummer</th>
+									<th align='left'>Status</th>
+								</tr>";
 					while($row = mysqli_fetch_assoc($result)) {
 						echo "<tr>
 								<td>" . $row["contractID"] ."</td>
@@ -100,7 +104,10 @@
 							</tr>";
 					}
 					echo "</table>";
+				} else {
+					echo "Inga korvtrakt tillgängliga för upphämtning.";
 				}
+
 			?>
 		</div>
 	</body>

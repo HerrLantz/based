@@ -55,6 +55,7 @@
 					}
 					echo "</table>";
 				}
+				mysqli_close($conn);
 			?>
 		</div>	
 	</body>

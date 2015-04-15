@@ -8,8 +8,8 @@
 		<div class="header">
 			<h1>Mina korvtrakt</h1>
 		</div>
-		<div class="container">
-			<h2>Korvtrakt du ska transportera</h2>
+		<div class="package_container">
+			<h2>Korvpaket du transporterar</h2>
 			<?php
 				$servername = "localhost";
 				$username = "root";
@@ -23,7 +23,7 @@
 				}
 				echo "<table style='width:100%'>
 								<tr>
-									<th align='left'>ID</th>
+									<th align='left'>Paketnummer</th>
 									<th align='left'>Status</th>
 								</tr>";
 				$sql = "SELECT * FROM dropsoff
@@ -46,8 +46,10 @@
 							</tr>";
 					}
 				}
-				$sql = "SELECT * FROM picksup
-						WHERE driverID =" . $_POST["driverID"] . "";
+				$sql = "SELECT packageID FROM picksup
+						WHERE driverID =" . $_POST["driverID"] . "
+						AND (packageID) NOT IN 
+						(SELECT packageID FROM dropsoff)";
 				$result = mysqli_query($conn, $sql);
 				if(!$result) {
 					printf("Ett fel uppstod. Se till att du fyllt i rätt förarnummer.");
@@ -66,7 +68,18 @@
 								</td>
 							</tr>";
 					}
-				}
+					echo "</table>";
+				}	
+			?>
+		</div>
+		<div class = "contracts_container">
+			<h2>Korvtrakt du ska transportera</h2>
+			<?php
+				echo "<table style='width:100%'>
+								<tr>
+									<th align='left'>Korvtraktnummer</th>
+									<th align='left'>Status</th>
+								</tr>";
 				$sql = "SELECT * FROM takes 
 						WHERE driverID =" . $_POST["driverID"] . "";
 				$result = mysqli_query($conn, $sql);
@@ -78,7 +91,7 @@
 					while($row = mysqli_fetch_assoc($result)) {
 						echo "<tr>
 								<td>" . $row["contractID"] ."</td>
-								<td>Ej Hämtat</td>
+								<td>Ej påbörjat leverans</td>
 								<td>
 									<form action='' method='post'>
 									<input type='hidden' name='korvtraktID' value=" . $row["contractID"] . ">
@@ -86,6 +99,7 @@
 								</td>
 							</tr>";
 					}
+					echo "</table>";
 				}
 			?>
 		</div>

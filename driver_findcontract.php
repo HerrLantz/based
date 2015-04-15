@@ -13,7 +13,7 @@
 			<p>
 			Här ser du korvtrakt som behöver folk som kan transportera varan.
 			Ser du ett korvtrakt du vill transportera för är det bara att klicka på
-			länken som tillhör korvtraktet.
+			knappen som tillhör korvtraktet.
 			</p>
 			<?php
 				$servername = "localhost";

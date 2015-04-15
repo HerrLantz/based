@@ -32,15 +32,20 @@
 					</div>
 				</form>
 			</div>
-			<div id="find_contract">
-				<h2>Hitta korvtrakt</h2>
-				<p>
-					Här kan du hitta ett korvtrakt som passar dig!
-					Det finns en stor variation bland olika korvtyper
-					från olika korvtillverkare.
-				</p>
-				<br>
-				<a href="find_contract.php">Klicka här!</a>
+			<div id="buttons">
+				<ul>
+					<li id="find_contract">
+						<a href="find_contract.php"><h3>Hitta korvtrakt</h3></a>
+					</li>
+					<br>
+					<li id="login_as_driver">
+						<a href="driver_login.php"><h3>Logga in som förare</h3></a>
+					</li>
+					<br>
+					<li id="find_contract_as_driver">
+						<a href="driver_findcontract.php"><h3>Hitta paket att hämta</h3></a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</body>

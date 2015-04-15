@@ -100,19 +100,21 @@ input:focus {
 =         Find contract			 =
 ================================*/
 
-#find_contract {
-	display: inline;
-	float: left;
-	margin-left: 16%;
+#buttons {
+	float: right;
+	width: 300px;
+	position: inline;
 }
 
-#find_contract p {
-	display: block;
-	width: 250px;
-	padding: 10px 0px 0px 0px;
+ul {
+	list-style-type: none;
 }
 
-#find_contract a {
+/*================================
+=         Link buttons			 =
+================================*/
+
+a {
 	display: inline-block;
 	text-decoration: none;
 	background-color: #67d393;
@@ -121,11 +123,11 @@ input:focus {
 	border-radius: 2px;
 }
 
-#find_contract a:hover {
+a:hover {
 	background-color: #67e393;
 }
 
-#find_contract a:active {
+a:active {
 	background-color: #67c393;
 }
 

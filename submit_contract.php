@@ -35,24 +35,14 @@
 				$everything_is_ok = false;
 				exit();
 			}
-			// Adding package information to the database
 
+			
 			$pkg_price = $_POST["package_price"];
 			$pkg_height = $_POST["package_height"];
 			$pkg_length = $_POST["package_length"];
 			$pkg_width = $_POST["package_width"];
 			$pkg_weight = $_POST["package_weight"];
 			$pkg_desc = $_POST["package_desc"];
-
-			$pkg_result = mysqli_query($conn, "INSERT INTO package (width, height, price, length, weight, description)
-									           VALUES ('$pkg_width', '$pkg_height', '$pkg_price', '$pkg_length', '$pkg_weight', '$pkg_desc')");
-
-			if (!$pkg_result) {
-				//SQL Error message. Use for debuging only!
-				printf("Error: %s\n", mysqli_error($conn));
-				$everything_is_ok = false;
-				exit();
-			}
 
 			$contr_sellerMail = $mail;
 			$contr_buyerMail = $_POST["buyer_mail"];
@@ -62,13 +52,28 @@
 			$contr_result = mysqli_query($conn, "INSERT INTO contract (sellerMail, buyerMail, delivPrice, packagePrice)
 									           VALUES ('$contr_sellerMail', '$contr_buyerMail', '$deliv_price', '$pkg_price')");
 
-			
 			if (!$contr_result) {
 				//SQL Error message. Use for debuging only!
 				printf("Error: %s\n", mysqli_error($conn));
 				$everything_is_ok = false;
 				exit();
 			}
+
+
+			// Adding package information to the database
+
+			$pkg_result = mysqli_query($conn, "INSERT INTO package (packageID,width, height, price, length, weight, description)
+									           VALUES (LAST_INSERT_ID(),'$pkg_width', '$pkg_height', '$pkg_price', '$pkg_length', '$pkg_weight', '$pkg_desc')");
+
+			
+			if (!$pkg_result) {
+				//SQL Error message. Use for debuging only!
+				printf("Error: %s\n", mysqli_error($conn));
+				$everything_is_ok = false;
+				exit();
+			}
+
+			echo mysqli_query($conn, "SELECT LAST_INSERT_ID()");
 
 			$opens_mail = $contr_sellerMail;
 

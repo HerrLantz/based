@@ -8,7 +8,9 @@
 		<div class="header">
 			<h1>Köp korv nu!</h1>
 		</div>
+		
 		<div class="container">
+		<!--
 			<div id="create_contract">
 				<h2>Skapa korvtrakt</h2>
 				<form action="contract_setup.php" method="post">
@@ -16,7 +18,7 @@
 					<input type="text" name="Namn" required>
 					<br>
 					<p>Mail:</p>
-					<input type="text" name="Mail" title="Exempelmail: korv@korv.se" required>
+					<input type="email" name="Mail" title="Exempelmail: korv@korv.se" required>
 					<br>
 					<p>Adress:</p>
 					<input type="text" name="Address" required>
@@ -32,10 +34,15 @@
 					</div>
 				</form>
 			</div>
+			-->
 			<div id="buttons">
 				<ul>
 					<li id="find_contract">
 						<a href="find_contract.php"><h3>Hitta korvtrakt</h3></a>
+					</li>
+					<br>
+					<li>
+						<a href="find_contract.php"><h3>Skapa kontrakt</h3></a>
 					</li>
 					<br>
 					<li id="login_as_driver">

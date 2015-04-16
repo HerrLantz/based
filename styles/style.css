@@ -41,13 +41,14 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
-	width: 800px;
+	width: 1000px;
 }
 
 /*================================
 =         Create contract		 =
 ================================*/
 
+/*
 #create_contract {
 	float: left;
 	border-right-style: solid;
@@ -96,18 +97,24 @@ input:focus {
 	background-color: #67c393;
 }
 
+*/
 /*================================
-=         Find contract			 =
+=         Start page buttons	 =
 ================================*/
 
 #buttons {
-	float: right;
 	width: 300px;
 	position: inline;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 ul {
 	list-style-type: none;
+}
+
+ul a {
+	width: 300px;
 }
 
 /*================================

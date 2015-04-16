@@ -41,7 +41,7 @@
 			<form action="submit_contract.php" method="post">
 				<h3>Uppgifter om köparen</h3>
 				<p>Köparens Mail:</p>
-				<input type="text" name="buyer_mail" title="Exempelmail: korv@korv.se" required>
+				<input type="email" name="buyer_mail" title="Exempelmail: korv@korv.se" required>
 				<p>Köparens Address:</p>
 				<input type="text" name="buyer_address" required>
 				<h3>Paketinformation</h3>

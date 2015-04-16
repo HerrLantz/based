@@ -42,7 +42,6 @@
 					</li>
 					<br>
 					<li>
-						<a href="find_contract.php"><h3>Skapa kontrakt</h3></a>
 					</li>
 					<br>
 					<li id="login_as_driver">

@@ -1,8 +1,8 @@
 <?php
-	if ($_POST["add"]) {
+	if (isset($_POST["add"])) {
 		header('Location: add_package.php');
 	}
-	if ($_POST["create"]) {
+	if (isset($_POST["create"])) {
 		header('Location: submit_contract.php');
 	}
 	die();

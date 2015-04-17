@@ -28,7 +28,7 @@
 					printf("Ett fel uppstod. Se till att du fyllt i rätt förarnummer.");
 					exit();
 				}
-				$picksql = "SELECT packageID FROM picksup
+				$picksql = "SELECT packageID, time FROM picksup
 							WHERE driverID =" . $_POST["driverID"] . "
 							AND (packageID) NOT IN 
 							(SELECT packageID FROM dropsoff)";
@@ -42,6 +42,7 @@
 								<tr>
 									<th align='left'>Paketnummer</th>
 									<th align='left'>Status</th>
+									<th align='left'>Senast uppdaterat</th>
 								</tr>";
 				} else {
 					echo "Inga korvpaket håller på transporteras.";
@@ -51,6 +52,7 @@
 						echo "<tr>
 								<td>" . $row["packageID"] ."</td>
 								<td>Hämtat</td>
+								<td>" . $row["time"] . "</td>
 								<td>
 									<form action='driver_packageupdate.php' method='post'>
 										<input type='hidden' name='packageID' value=" . $row["packageID"] . ">
@@ -65,6 +67,7 @@
 						echo "<tr>
 								<td>" . $row["packageID"] ."</td>
 								<td>Levererat</td>
+								<td>" . $row["time"] . "</td>
 							</tr>";
 					}
 					echo "</table>";

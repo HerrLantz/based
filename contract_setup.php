@@ -9,34 +9,6 @@
 		<h1>Fyll i Korvtrakt!</h1>
 	</div>
 	<div class="container">
-		<div id="personal_info">
-			<table>
-				<tr>
-					<th>Namn</th>
-					<th>Mail</th>
-					<th>Adress</th>
-					<th>Bankkontonummer</th>
-					<th>Clearingnummer</th>
-				</tr>
-				<tr>
-					<td>
-						<?php echo $_POST["Namn"]; ?>
-					</td>
-					<td>
-						<?php echo $_POST["Mail"]; ?>
-					</td>
-					<td>
-						<?php echo $_POST["Address"]; ?>
-					</td>
-					<td>
-						<?php echo $_POST["BAN"]; ?>
-					</td>
-					<td>
-						<?php echo $_POST["BRN"]; ?>
-					</td>
-				</tr>
-			</table>
-		</div>
 		<div id="enter_contract">
 			<form action="submit_contract.php" method="post">
 				<h3>Uppgifter om köparen</h3>

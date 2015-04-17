@@ -12,7 +12,7 @@
 		header('Location: add_package.php');
 	}
 	if (isset($_POST["create"])) {
-		header('Location: submit_contract.php');
+		header('Location: enter_contact_info.php');
 	}
 	die();
 ?>

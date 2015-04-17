@@ -13,6 +13,7 @@
 					<p>Ditt förarnummer</p>
 					<input type="number" name="driverID" required>
 					<br>
+					<br>	
 					<div class="continue_button">
 						<input type="submit" value="Logga in">
 				</form>

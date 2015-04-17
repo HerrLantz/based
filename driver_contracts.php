@@ -50,12 +50,13 @@
 					while($row = mysqli_fetch_assoc($pickresult)) {
 						echo "<tr>
 								<td>" . $row["packageID"] ."</td>
-								<td>Levererat</td>
+								<td>Hämtat</td>
 								<td>
 									<form action='' method='post'>";
 									//Använd om packet nummer måste skickas vidare till nästa sida.
 									//<input type='hidden' name='korvtraktID' value=" . $row["packageID"] . ">"
-						echo	"</td>
+						echo 		"<input type='submit' value='Uppdatera status'>	
+								</td>
 							</tr>";
 					}
 				}
@@ -63,13 +64,12 @@
 					while($row = mysqli_fetch_assoc($dropresult)) {
 						echo "<tr>
 								<td>" . $row["packageID"] ."</td>
-								<td>Hämtat</td>
+								<td>Levererat</td>
 								<td>
 									<form action='' method='post'>";
 									//Använd om packet nummer måste skickas vidare till nästa sida.
 									//<input type='hidden' name='korvtraktID' value=" . $row["contractID"] . ">
-						echo		"<input type='submit' value='Uppdatera status'>
-								</td>
+						echo	"</td>
 							</tr>";
 					}
 					echo "</table>";

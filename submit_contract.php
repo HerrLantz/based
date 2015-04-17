@@ -37,23 +37,23 @@
 
 	$price_total = 0; // The total price of all packages
 
-	foreach($SESSION["pkg_price"] as $price) {
+	foreach($_SESSION["pkg_price"] as $price) {
 		$price_total += $price;
 	}
 
 	// Calculating delivery price
 	$deliv_price = 0;
-	for($i = 0; i < count($_SESSION["pkg_price"]; $i++) {
-		$pkg_height = $_POST["pkg_height"][$i];
-		$pkg_length = $_POST["pkg_length"][$i];
-		$pkg_width = $_POST["pkg_width"][$i];
-		$pkg_weight = $_POST["pkg_weight"][$i];
+	for($i = 0; $i < count($_SESSION["pkg_price"]); $i++) {
+		$pkg_height = $_SESSION["pkg_height"][$i];
+		$pkg_length = $_SESSION["pkg_length"][$i];
+		$pkg_width = $_SESSION["pkg_width"][$i];
+		$pkg_weight = $_SESSION["pkg_weight"][$i];
 
 		$deliv_price += ($pkg_height*$pkg_length*$pkg_width)*100;
 	}
 
 	$contr_result = mysqli_query($conn, "INSERT INTO contract (sellerMail, buyerMail, delivPrice, packagePrice)
-									     VALUES ('$contr_sellerMail', '$contr_buyerMail', '$deliv_price', '$pkg_price')");
+									     VALUES ('$contr_sellerMail', '$contr_buyerMail', '$deliv_price', '$price_total')");
 
 	if (!$contr_result) {
 		//SQL Error message. Use for debuging only!
@@ -65,16 +65,16 @@
 	$lastID = mysqli_fetch_row($lastID);
 
 	// adding packages to the DB
-	for($i = 0; i < count($_SESSION["pkg_price"]; $i++) {
+	for($i = 0; $i < count($_SESSION["pkg_price"]); $i++) {
 		$pkg_price = $_SESSION["pkg_price"][$i];
-		$pkg_height = $_POST["pkg_height"][$i];
-		$pkg_length = $_POST["pkg_length"][$i];
-		$pkg_width = $_POST["pkg_width"][$i];
-		$pkg_weight = $_POST["pkg_weight"][$i];
-		$pkg_desc = $_POST["pkg_desc"][$i];
+		$pkg_height = $_SESSION["pkg_height"][$i];
+		$pkg_length = $_SESSION["pkg_length"][$i];
+		$pkg_width = $_SESSION["pkg_width"][$i];
+		$pkg_weight = $_SESSION["pkg_weight"][$i];
+		$pkg_desc = $_SESSION["pkg_desc"][$i];
 
 		$pkg_result = mysqli_query($conn, "INSERT INTO package (contractID, width, height, price, length, weight, description)
-									       VALUES ('$lastID','$pkg_width', '$pkg_height', '$pkg_price', '$pkg_length', '$pkg_weight', '$pkg_desc')");
+									       VALUES ('$lastID[0]','$pkg_width', '$pkg_height', '$pkg_price', '$pkg_length', '$pkg_weight', '$pkg_desc')");
 	}
 
 
@@ -99,18 +99,6 @@
 <body>
 	<div class="container">
 		<?php
-
-
-		
-
-
-
-
-			// Adding package information to the database
-
-			
-
-
 
 		?>
 	</div>

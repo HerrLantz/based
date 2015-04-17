@@ -42,6 +42,7 @@
 					</li>
 					<br>
 					<li>
+						<a href="add_package.php"><h3>Skapa korvtrakt</h3></a>
 					</li>
 					<br>
 					<li id="login_as_driver">

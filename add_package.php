@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<?php
+	session_start();
+	if (!isset($_SESSION["pkg_price"])) {
+		$_SESSION["pkg_price"] = array();
+		$_SESSION["pkg_height"] = array();
+		$_SESSION["pkg_length"] = array();
+		$_SESSION["pkg_width"] = array();
+		$_SESSION["pkg_weight"] = array();
+		$_SESSION["pkg_desc"] = array();
+	}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Lägg till paket</title>
@@ -11,11 +22,13 @@
 	<div class="container">
 		<div id="enter_contract">
 			<form action="redirection.php" method="post">
+			<!--
 				<h3>Uppgifter om köparen</h3>
 				<p>Köparens Mail:</p>
 				<input type="email" name="buyer_mail" title="Exempelmail: korv@korv.se" required>
 				<p>Köparens Address:</p>
 				<input type="text" name="buyer_address" required>
+				-->
 				<h3>Paketinformation</h3>
 				<p>Pris:</p>
 				<input type="text" pattern="[0-9]+" name="package_price" title="Endast siffor tillåtna" required>

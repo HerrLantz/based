@@ -54,6 +54,9 @@
 							</tr>";	
 					}
 					echo "</table>";
+				} else {
+					echo "<br>
+							<br>
 				}
 				mysqli_close($conn);
 			?>

@@ -89,18 +89,18 @@
 		exit();
 	}
 	
-
+	// DESTROY AND REMOVE ALL SESSION VARIABLES
+	session_unset(); 
+	session_destroy();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Kontrakt skapat!</title>
 </head>
 <body>
 	<div class="container">
-		<?php
 
-		?>
 	</div>
 </body>
 </html>

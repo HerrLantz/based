@@ -52,10 +52,10 @@
 								<td>" . $row["packageID"] ."</td>
 								<td>Hämtat</td>
 								<td>
-									<form action='' method='post'>";
-									//Använd om packet nummer måste skickas vidare till nästa sida.
-									//<input type='hidden' name='korvtraktID' value=" . $row["packageID"] . ">"
-						echo 		"<input type='submit' value='Uppdatera status'>	
+									<form action='driver_packageupdate.php' method='post'>
+										<input type='hidden' name='packageID' value=" . $row["packageID"] . ">
+										<input type='hidden' name='driverID' value=" . $_POST["driverID"] . ">
+										<input type='submit' value='Uppdatera status'>	
 								</td>
 							</tr>";
 					}
@@ -65,11 +65,6 @@
 						echo "<tr>
 								<td>" . $row["packageID"] ."</td>
 								<td>Levererat</td>
-								<td>
-									<form action='' method='post'>";
-									//Använd om packet nummer måste skickas vidare till nästa sida.
-									//<input type='hidden' name='korvtraktID' value=" . $row["contractID"] . ">
-						echo	"</td>
 							</tr>";
 					}
 					echo "</table>";
@@ -107,7 +102,7 @@
 				} else {
 					echo "Inga korvtrakt tillgängliga för upphämtning.";
 				}
-
+				mysqli_close($conn);
 			?>
 		</div>
 	</body>

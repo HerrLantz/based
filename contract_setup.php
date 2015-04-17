@@ -57,7 +57,7 @@
 				<input type="text" pattern="[0-9]+" name="package_weight" title="Endast siffor tillåtna" required>
 				<p>Beskrivning av produkt:</p>
 				<div id="prod_description">
-					<input type="text" pattern=".{20,256}" name="package_desc" title="Beskrivningen måste vara mellan 20-256 tecken långt!" required>
+					<input type="text" pattern=".{10,256}" name="package_desc" title="Beskrivningen måste vara mellan 20-256 tecken långt!" required>
 				</div>
 				<br>
 				<?php
@@ -69,6 +69,7 @@
 				?>
 				<div class="continue_button">
 					<input type="submit" value="Skapa Korvtrakt!">
+					<input type="submit" value="Lägg till paket!">
 				</div>
 			</form>
 		</div>

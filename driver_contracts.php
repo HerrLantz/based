@@ -95,7 +95,7 @@
 								<td>" . $row["contractID"] ."</td>
 								<td>Ej påbörjat leverans</td>
 								<td>
-									<form action='' method='post'>
+									<form action='driver_contractupdate.php' method='post'>
 									<input type='hidden' name='korvtraktID' value=" . $row["contractID"] . ">
 									<input type='submit' value='Uppdatera status'>
 								</td>

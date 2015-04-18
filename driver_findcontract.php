@@ -57,6 +57,7 @@
 				} else {
 					echo "<br>
 							<br>
+							<h3>Det finns inget korvtrakt som behöver en förare för tillfället. Kom gärna tillbaka senare.</h3>";
 				}
 				mysqli_close($conn);
 			?>

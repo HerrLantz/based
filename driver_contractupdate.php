@@ -49,7 +49,6 @@
 									<input type='submit' value='Hämta paket'>
 									<input type='hidden' name='packageID' value=" . $row["packageID"] . ">
 									<input type='hidden' name='driverID' value=" . $_POST["driverID"] . ">
-									<input type='hidden' name='korvtraktID' value=" . $_POST["korvtraktID"] . ">
 								</form>
 								</td>
 							</tr>";

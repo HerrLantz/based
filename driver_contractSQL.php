@@ -25,8 +25,8 @@
 				$result = mysqli_query($conn, $sql);
 				if($result) {
 					echo "<h2>Detta paket har nu registrerat som \"Hämtat\"</h2>
-						<form action='driver_contractupdate.php' method='post'>
-							<input type='hidden' name='korvtraktID' value=" . $_POST["korvtraktID"] . ">
+						<form action='driver_contracts.php' method='post'>
+							<input type='hidden' name='driverID' value=" . $_POST["driverID"] . ">
 							<input type='submit' value='Fortsätt'>";
 					mysqli_close($conn);
 					exit();

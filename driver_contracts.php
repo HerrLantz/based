@@ -70,7 +70,7 @@
 								<td>" . $row["time"] . "</td>
 							</tr>";
 					}
-					echo "</table>";
+					echo "</table><br>";
 				}	
 			?>
 		</div>
@@ -97,7 +97,9 @@
 								<td>
 									<form action='driver_contractupdate.php' method='post'>
 									<input type='hidden' name='korvtraktID' value=" . $row["contractID"] . ">
+									<input type='hidden' name='driverID' value=" . $_POST["driverID"] . ">
 									<input type='submit' value='Uppdatera status'>
+									</form>
 								</td>
 							</tr>";
 					}

@@ -24,7 +24,9 @@
 				$sql = "SELECT * 
 						FROM takes JOIN package
 							ON takes.contractID = package.contractID
-						WHERE takes.contractID =" . $_POST["korvtraktID"];
+						WHERE takes.contractID =" . $_POST["korvtraktID"] . "
+						AND package.packageID NOT IN
+						(SELECT packageID FROM picksup)";
 				$result = mysqli_query($conn, $sql);
 				if(!$result) {
 					printf("Ett fel uppstod. Försök igen.");
@@ -35,12 +37,22 @@
 							<table style='width:100%'>
 								<tr>
 									<th align='left'>Paketnummer</th>
+									<th align='left'>Beskrivning</th>
 								</tr>";
 					while($row = mysqli_fetch_assoc($result)) {
 							// Add function so that the package is set to "hämtat" on button click.
 						echo "<tr>
 								<td>" . $row["packageID"] ."</td>
-								</tr>";
+								<td>" . $row["description"] . "</td>
+								<td>
+								<form action='driver_contractSQL.php' method='post'>
+									<input type='submit' value='Hämta paket'>
+									<input type='hidden' name='packageID' value=" . $row["packageID"] . ">
+									<input type='hidden' name='driverID' value=" . $_POST["driverID"] . ">
+									<input type='hidden' name='korvtraktID' value=" . $_POST["korvtraktID"] . ">
+								</form>
+								</td>
+							</tr>";
 					}
 					echo "</table>";
 				} else {

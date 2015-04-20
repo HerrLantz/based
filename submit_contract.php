@@ -116,7 +116,6 @@
 			$seller_info = mysqli_query($conn, "SELECT * FROM seller
 		                                	    WHERE sellerMail = '$mail'");
 			
-
 			while ($seller = mysqli_fetch_row($seller_info)) {
 				echo "<tr>";
 				for ($i = 0; $i < count($seller); $i++) {
@@ -124,6 +123,8 @@
 				}
 				echo "</tr>";
 			}
+
+
 		?>
 	</table>
 

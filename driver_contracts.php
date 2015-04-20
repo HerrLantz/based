@@ -10,6 +10,9 @@
 		</div>
 		<div class="package_container">
 			<h2>Korvpaket du transporterar</h2>
+			<br>
+			<h3>Paket vars leverans har blivit bekräftad av köparen visas ej här</h3>
+			<br>
 			<?php
 				$servername = "localhost";
 				$username = "root";
@@ -24,7 +27,9 @@
 				$dropsql = "SELECT dropsoff.packageID, contractID, time 
 							FROM dropsoff JOIN package
 								ON dropsoff.packageID = package.packageID
-							WHERE driverID =" . $_POST["driverID"] . "";
+							WHERE driverID =" . $_POST["driverID"] . "
+							AND dropsoff.packageID NOT IN
+							(SELECT packageID FROM confirms)";
 				$dropresult = mysqli_query($conn, $dropsql);
 				if(!$dropresult) {
 					printf("Ett fel uppstod. Se till att du fyllt i rätt förarnummer.");

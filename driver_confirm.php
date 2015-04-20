@@ -6,9 +6,9 @@
 	</head>
 	<body>
 		<div class="header">
-			<h1><?php $_POST["korvtraktID"] ?></h1>
+			<h1><?php echo "Ditt korvtraktID: " . $_POST["korvtraktID"]; ?></h1>
 		</div>
-		<div>
+		<div class="container">
 			<?php
 				$servername = "localhost";
 				$username = "root";
@@ -55,7 +55,7 @@
     								Ditt förarnummer är " . $row["driverID"] . "<br>
     								Detta nummer använder du för att logga in på startsida när du ska 
     								registrera att du hämtat korven från säljaren.<br>";
-    						echo "<a href='index.php'>Fortsätt<a>";
+    						echo "<a href='index.php'>Fortsätt</a>";
     						}
     					} else {
     						echo "Ett fel uppstod. Shit...";

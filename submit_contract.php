@@ -106,7 +106,12 @@
 	</div>
 	<div class="container">
 	<h2>Dina uppgifter</h2>
+	<br>
 	<table>
+		<th>Email</th>
+		<th>Adress</th>
+		<th>Bankkontonummer</th>
+		<th>Clearingnummer</th>
 		<?php
 			$seller_info = mysqli_query($conn, "SELECT * FROM seller
 		                                	    WHERE sellerMail = '$mail'");

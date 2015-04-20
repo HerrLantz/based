@@ -165,28 +165,28 @@ a:active {
 =         personal_info			 =
 ================================*/
 
-#personal_info table {
+table {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#personal_info table th {
+table th {
 	background-color: #45f3a4;
 }
 
-#personal_info table tr {
+table tr {
 	background-color: #f0fff4;
 }
 
-#personal_info table tr:hover {
+table tr:hover {
 	background-color: #45f3e4;
 }
 
-#personal_info table th, #personal_info table td {
+table th, table td {
 	padding: 5px 20px;
 }
 
-#personal_info table, #personal_info th, #personal_info td {
+ table, th, td {
 	border: 1px solid #999999;
 	border-collapse: collapse;
 }

@@ -22,13 +22,6 @@
 	<div class="container">
 		<div id="enter_contract">
 			<form action="redirection.php" method="post">
-			<!--
-				<h3>Uppgifter om köparen</h3>
-				<p>Köparens Mail:</p>
-				<input type="email" name="buyer_mail" title="Exempelmail: korv@korv.se" required>
-				<p>Köparens Address:</p>
-				<input type="text" name="buyer_address" required>
-				-->
 				<h3>Paketinformation</h3>
 				<p>Pris:</p>
 				<input type="text" pattern="[0-9]+" name="package_price" title="Endast siffor tillåtna" required>
@@ -49,6 +42,8 @@
 					<input type="submit" value="Skapa Korvtrakt!" name="create">
 					<input type="submit" value="Lägg till paket!" name="add">
 				</div>
+			</form>
+		</div>
 	</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	date_default_timezone_set('Europe/Stockholm');
 
 	$servername = "localhost";
@@ -96,10 +96,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="styles/style.css" rel="stylesheet">
 	<title>Kontrakt skapat!</title>
 </head>
 <body>
+	<div class="header">
+		<link href="styles/style.css" rel="stylesheet">
+		<h1>Köp korv nu!</h1>
+	</div>
 	<div class="container">
+	<h2>Dina uppgifter</h2>
+	<table>
+		<?php
+			$seller_info = mysqli_query($conn, "SELECT * FROM seller
+		                                	    WHERE sellerMail = '$mail'");
+			
+
+			while ($seller = mysqli_fetch_row($seller_info)) {
+				echo "<tr>";
+				for ($i = 0; $i < count($seller); $i++) {
+					echo "<td>" . $seller[$i] . "</td>";
+				}
+				echo "</tr>";
+			}
+		?>
+	</table>
 
 	</div>
 </body>

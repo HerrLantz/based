@@ -14,14 +14,5 @@
 	if (isset($_POST["create"])) {
 		header('Location: enter_contact_info.php');
 	}
-	die();
+	exit;
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-</body>
-</html>

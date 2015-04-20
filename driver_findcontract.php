@@ -28,9 +28,9 @@
 				}
 				$sql = "SELECT contractID, delivPrice
 						FROM contract
-						WHERE (contractID, delivPrice) NOT IN
-						(SELECT contractID, delivPrice 
-						FROM contract NATURAL JOIN takes)";
+						WHERE contractID NOT IN
+						(SELECT contractID 
+						FROM takes)";
 				$result = mysqli_query($conn, $sql);
 				if(!$result) {
 					printf("Ett fel uppstod. Försök igen.");
@@ -48,8 +48,9 @@
 								<td>" . $row["delivPrice"] . " SEK </td>
 								<td>
 									<form action='driver_brnfill.php' method='post'>
-									<input type='hidden' name='korvtraktID' value=" . $row["contractID"] . ">
-									<input type='submit' value='Ta korvtrakt'>
+										<input type='hidden' name='korvtraktID' value='" . $row["contractID"] . "'>
+										<input type='submit' value='Ta korvtrakt'>
+									</form>
 								</td>
 							</tr>";	
 					}

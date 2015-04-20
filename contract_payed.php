@@ -26,11 +26,15 @@
 							WHERE contractID = " . $_POST["korvtraktID"] . "";		
 					$checkresult = mysqli_query($conn, $checksql);
 					if(mysqli_num_rows($checkresult) == 0) {
+						// Add buyers cardinfo to DB (wtf is this legal?)
+						$driversql = "INSERT INTO buyer (cardinfo)
+										VALUES (" . $_POST["kortnummer"] . ")";
+						$driverresult = mysqli_query($conn, $driversql);
 						//Register the contract as payed in database
 						$paysql = "INSERT INTO pays
 								(time, contractID) VALUES (NOW(), " . $_POST["korvtraktID"] . ")";
 						$payresult = mysqli_query($conn, $paysql);
-						if($payresult) {
+						if($payresult && $driverresult) {
 							echo "Betalning gick igenom. Fan va nice!";
 							echo "<br>";
 							echo "<a href='index.php'>Fortsätt</a>";

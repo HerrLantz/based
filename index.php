@@ -26,6 +26,14 @@
 					<li id="find_contract_as_driver">
 						<a href="driver_findcontract.php"><h3>Hitta paket att hämta</h3></a>
 					</li>
+					<br>
+					<li id="confirm_delivery_as_buyer">
+						<a href=""><h3>Bekräfta leverans av ett paket</h3></a>
+					</li>
+					<br>
+					<li id="settle_contract_as_buyer">
+						<a href=""><h3>Faställ ett korvtrakt</h3></a>
+					</li>
 				</ul>
 			</div>
 		</div>

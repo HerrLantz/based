@@ -113,7 +113,9 @@
 							</tr>";
 					}
 				}
-				echo "</table>";
+				echo "</table>
+						<br>
+						<a href='index.php'>Till startsidan</a>";
 				mysqli_close($conn);
 			?>
 		</div>

@@ -28,7 +28,7 @@
 					</li>
 					<br>
 					<li id="confirm_delivery_as_buyer">
-						<a href=""><h3>Bekräfta leverans av ett paket</h3></a>
+						<a href="buyer_confirm.php"><h3>Bekräfta leverans av ett paket</h3></a>
 					</li>
 					<br>
 					<li id="settle_contract_as_buyer">

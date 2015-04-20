@@ -46,7 +46,9 @@
 								ON takes.contractID = package.contractID
 							WHERE driverID = " . $_POST["driverID"] . "
 							AND packageID NOT IN
-							(SELECT packageID FROM picksup)";
+							(SELECT packageID FROM picksup)
+							AND packageID NOT IN 
+							(SELECT packageID FROM dropsoff)";
 				$takenresult = mysqli_query($conn, $takensql);
 				if(!$takenresult) {
 					printf("Ett fel uppstod. Se till att du fyllt i rätt förarnummer.");
@@ -73,7 +75,7 @@
 								<td>" . $row["time"] . "</td>
 								<td>" . $row["contractID"] . "</td>
 								<td>
-									<form action='driver_packageupdate.php' method='post'>
+									<form action='driver_packagedropoff.php' method='post'>
 										<input type='hidden' name='packageID' value=" . $row["packageID"] . ">
 										<input type='hidden' name='driverID' value=" . $_POST["driverID"] . ">
 										<input type='submit' value='Uppdatera status'>
@@ -91,7 +93,7 @@
 								<td>" . $row["time"] . "</td>
 								<td>" . $row["contractID"] . "</td>
 								<td>
-									<form action='driver_packageupdate.php' method='post'>
+									<form action='driver_packagepickup.php' method='post'>
 										<input type='hidden' name='packageID' value=" . $row["packageID"] . ">
 										<input type='hidden' name='driverID' value=" . $_POST["driverID"] . ">
 										<input type='submit' value='Uppdatera status'>

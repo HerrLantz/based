@@ -15,7 +15,9 @@
 					<p>E-mailadress:</p>
 					<input type="email" name="buyermail" required>
 					<br>
+					<br>
 					<p>Korvtrakt ID (endast siffor):</p>
+					<p><small>Detta nummer ska du ha fått skickat till din e-mail av försäljaren</small></p>
 					<input type="text" pattern="[0-9]+" name="korvtraktID" title="Endast siffor tillåtna" required>
 					<br><br>
 					<div class="continue_button">

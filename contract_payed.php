@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div class="header">
-			<h1><?php echo $_POST["korvtraktID"] ?></h1>
+			<h1>Betala Korvtrakt</h1>
 		</div>
 		<div class="continer">
 			<div>
@@ -44,7 +44,8 @@
 						mysqli_close($conn);
 					//if the contract has already been payed an error is given and the connection is closed.
 					} else {
-						echo "Detta korvtrakt är redan betalt";
+						echo "Detta korvtrakt är redan betalt<br>";
+						echo "<a href='index.php'>Fortsätt</a>";
 						mysqli_close($conn);
 					}
 				?>

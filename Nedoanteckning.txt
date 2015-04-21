@@ -1,0 +1,9 @@
+SELECT *
+FROM contract JOIN package
+	ON contract.contractID = package.contractID
+WHERE conctract.contractID = 20
+AND contract.buyerMail = SKII
+AND (package.packageID) == ALL
+(SELECT packageID FROM dropsoff JOIN package
+ON dropsoff.packageID = package.packageID
+WHERE package.contractID = 20)

@@ -110,33 +110,60 @@
 </head>
 <body>
 	<div class="header">
-		<link href="styles/style.css" rel="stylesheet">
 		<h1>Köp korv nu!</h1>
 	</div>
 	<div class="container">
-	<h2>Dina uppgifter</h2>
-	<br>
-	<table>
-		<th>Email</th>
-		<th>Adress</th>
-		<th>Bankkontonummer</th>
-		<th>Clearingnummer</th>
-		<?php
-			$seller_info = mysqli_query($conn, "SELECT * FROM seller
-		                                	    WHERE sellerMail = '$mail'");
-			
-			while ($seller = mysqli_fetch_row($seller_info)) {
-				echo "<tr>";
-				for ($i = 0; $i < count($seller); $i++) {
-					echo "<td>" . $seller[$i] . "</td>";
+		<h2>Dina uppgifter</h2>
+		<br>
+		<table>
+			<th>Email</th>
+			<th>Adress</th>
+			<th>Bankkontonummer</th>
+			<th>Clearingnummer</th>
+			<?php
+				$seller_info = mysqli_query($conn, "SELECT * FROM seller
+			                                	    WHERE sellerMail = '$mail'");
+				
+				while ($seller = mysqli_fetch_row($seller_info)) {
+					echo "<tr>";
+					for ($i = 0; $i < count($seller); $i++) {
+						echo "<td>" . $seller[$i] . "</td>";
+					}
+					echo "</tr>";
 				}
-				echo "</tr>";
-			}
 
 
-		?>
-	</table>
+			?>
+		</table>
+		<br><br>
 
+		<table>
+		<th>Paket ID</th>
+		<th>Tillhör kontrakt med ID</th>
+		<th>Bredd (meter)</th>
+		<th>Höjd (meter)</th>
+		<th>Pris (kronor)</th>
+		<th>Längd (meter)</th>
+		<th>Vikt (kilogram)</th>
+		<th>Beskrivning</th>
+			<?php
+				$pkg_info = mysqli_query($conn, "SELECT * FROM package
+			                                	 WHERE contractID = '$lastID[0]'");
+				while ($pkg = mysqli_fetch_row($pkg_info)) {
+					echo "<tr>";
+					for ($i = 0; $i < count($pkg); $i++) {
+						echo "<td>" . $pkg[$i] . "</td>";
+					}
+					echo "</tr>";
+				}
+
+
+			?>
+		</table>
+		<br><br>
+		<div id="homeknapp">
+			<a href="index.php"><h3>Gå tillbaka</h3></a>
+		</div>
 	</div>
 </body>
 </html>

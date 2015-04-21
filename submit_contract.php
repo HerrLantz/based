@@ -31,7 +31,16 @@
 		printf("Error: %s\n", mysqli_error($conn));
 		exit();
 	}
-
+	// HÄR BÖRJAR NEDO KOD
+	// Add buyer to DB
+	$buyer_result = mysqli_query($conn, "INSERT INTO buyer (deliverAddress, buyerMail)
+										VALUES ('$contr_buyerAddress', '$contr_buyerMail')");
+	if (!$buyer_result) {
+		//SQL Error message. Use for debuging only!
+		printf("Error: %s\n", mysqli_error($conn));
+		exit();
+	}
+	// SLUT PÅ NEDO KOD
 	// START SESSION TO ACCESS SESSION VARIABLES
 	session_start();
 

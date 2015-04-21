@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<link href="styles/style.css" rel="stylesheet">
@@ -19,7 +19,7 @@
 					<input type="text" pattern="[0-9]+" name="korvtraktID" title="Endast siffor tillåtna" required>
 					<br><br>
 					<div class="continue_button">
-						<input type="submit" value="Sök">
+						<input type="submit" value="Fastställ">
 					</div>
 				</form>
 			</div>

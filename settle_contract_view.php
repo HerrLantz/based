@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<link href="styles/style.css" rel="stylesheet">
@@ -23,15 +23,20 @@
 				$mail = $_POST["buyermail"];
 				$contractID = $_POST["korvtraktID"];
 
-				$sql = "SELECT * FROM contract 
-						WHERE contractID = '$contractID' AND buyermail = '$mail'";
+				$sql = "INSERT INTO settled  
+						VALUES ('$contractID', '$mail', NOW())";
 				$result = mysqli_query($conn, $sql);
-				if (!$result) {
+				if ($result) {
+					echo "Korvtraktet är nu fastställt.<br>";
+					echo "<a href='index.php'>Fortsätt</a>";
+				} else {
 					//printf("Inget korvtrakt hittades! Se till att du fyllt i rätt korvtraktnummer.");
 					//SQL Error message. Use for debuging only!
     				printf("Error: %s\n", mysqli_error($conn));
+    				mysqli_close($conn);
     				exit();
 				}
+				mysqli_close($conn);			
 			?>
 		</div>
 	</body>

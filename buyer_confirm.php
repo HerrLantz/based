@@ -18,7 +18,7 @@
 					<br>
 					<br>	
 					<div class="continue_button">
-						<input type="submit" value="Logga in">
+						<input type="submit" value="Bekräfta leverans">
 				</form>
 			</div>
 		</div>

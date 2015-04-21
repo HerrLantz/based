@@ -1,9 +1,43 @@
-SELECT *
+SELECT package.packageID
 FROM contract JOIN package
 	ON contract.contractID = package.contractID
-WHERE conctract.contractID = 20
-AND contract.buyerMail = SKII
-AND (package.packageID) == ALL
-(SELECT packageID FROM dropsoff JOIN package
-ON dropsoff.packageID = package.packageID
-WHERE package.contractID = 20)
+WHERE contract.contractID = 100000
+AND contract.buyerMail = 'patric@kth.se'
+AND package.packageID = ALL 
+	(SELECT confirms.packageID FROM confirms JOIN package
+	ON confirms.packageID = package.packageID
+	WHERE package.contractID = 100000)
+
+
+SELECT packageID
+FROM
+(
+    SELECT *
+    FROM t1
+    UNION ALL
+    SELECT *
+    FROM t2
+)
+GROUP BY packageID
+HAVING COUNT(*) = 1
+ORDER BY packageID
+(SELECT package.packageID
+FROM contract JOIN package
+	ON contract.contractID = package.contractID
+WHERE contract.contractID = 100000
+AND contract.buyerMail = 'patric@kth.se') AS t1
+
+(SELECT confirms.packageID FROM confirms JOIN package
+ON confirms.packageID = package.packageID
+WHERE package.contractID = 100000) AS t2
+
+
+SELECT contract.contractID, contract.sellerMail, 
+	(SELECT confirms.packageID FROM confirms JOIN package
+	ON confirms.packageID = package.packageID
+	WHERE package.contractID = 100000) as t
+FROM contract JOIN package
+	ON contract.contractID = package.contractID
+WHERE contract.contractID = 100000
+AND contract.buyerMail = 'patric@kth.se'
+AND t.packageID NOT IN package.packageID 

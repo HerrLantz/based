@@ -34,6 +34,11 @@
 					<li id="settle_contract_as_buyer">
 						<a href="settle_find.php"><h3>Faställ ett korvtrakt</h3></a>
 					</li>
+					<br>
+					<li id="signshit">
+						<a href="seller_sign.php"><h3>Skriv på korvtrakt som säljare</h3></a>
+					</li>
+
 				</ul>
 			</div>
 		</div>

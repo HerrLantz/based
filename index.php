@@ -32,7 +32,7 @@
 					</li>
 					<br>
 					<li id="settle_contract_as_buyer">
-						<a href=""><h3>Faställ ett korvtrakt</h3></a>
+						<a href="settle_find.php"><h3>Faställ ett korvtrakt</h3></a>
 					</li>
 				</ul>
 			</div>

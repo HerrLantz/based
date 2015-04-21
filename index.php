@@ -12,7 +12,7 @@
 			<div id="buttons">
 				<ul>
 					<li id="find_contract">
-						<a href="find_contract.php"><h3>Hitta korvtrakt</h3></a>
+						<a href="find_contract.php"><h3>Betala korvtrakt</h3></a>
 					</li>
 					<br>
 					<li>

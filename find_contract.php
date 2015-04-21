@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div class="header">
-			<h1>Hitta Korvtrakt</h1>
+			<h1>Betala Korvtrakt</h1>
 		</div>
 		<div class ="container">
 			<div id ="search_contract">
